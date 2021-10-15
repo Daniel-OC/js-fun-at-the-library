@@ -12,10 +12,21 @@ return character
 }
 
 
+function saveReview(newReview, reviews) {
+  if(reviews.includes(newReview)) {
+  } else {
+    reviews.push(newReview)
+  }
+};
+
+
+
+
+
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
