@@ -15,11 +15,19 @@ function unshelfBook(title, shelf) {
 
 }
 
+function listTitles(shelf) {
+  var titles = [];
+  for (i = 0; i < shelf.length; i++) {
+    titles.push(shelf[i].title)
+  }
+  titles = titles.join(', ');
+  return(titles)
+}
 
 
 module.exports = {
   shelfBook,
   unshelfBook,
-  // listTitles,
+listTitles,
   // searchShelf
 };
