@@ -20,14 +20,26 @@ function listTitles(shelf) {
   for (i = 0; i < shelf.length; i++) {
     titles.push(shelf[i].title)
   }
+  //console.log(titles)
   titles = titles.join(', ');
   return(titles)
 }
+
+function searchShelf(shelf, title) {
+  var titles = [];
+  for (i = 0; i < shelf.length; i++) {
+    titles.push(shelf[i].title)
+  }
+  if (titles.includes(title)) {
+    return true
+  }else {
+    return false}
+  }
 
 
 module.exports = {
   shelfBook,
   unshelfBook,
-listTitles,
-  // searchShelf
+  listTitles,
+  searchShelf
 };
