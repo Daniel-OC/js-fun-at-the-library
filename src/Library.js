@@ -28,6 +28,7 @@ function addBook(branch, book) {
   //console.log(branch.shelves)
 //}
 
+
 // function checkoutBook(branch, title, genre) {
 //   for (i = 0; i < branch.shelves.fantasy.length; i++){
 //     if (branch.shelves.fantasy[i].title === title){
@@ -50,35 +51,35 @@ function addBook(branch, book) {
 // }
 
 
-// function checkoutBook(branch, title, genre) {
-//   if (genre === "fantasy") {
-//     for (i = 0; i < branch.shelves.fantasy.length; i++) {
-//       if (branch.shelves.fantasy[i].title === title) {
-//         branch.shelves.fantasy.splice(i,1);
-//         return `You have now checked out ${title} from the ${branch.name}`
-//       }
-//     }
-//   }else if (genre === "fiction") {
-//     for (i = 0; i < branch.shelves.fiction.length; i++) {
-//       if (branch.shelves.fiction[i].title === title) {
-//         branch.shelves.fiction.splice(i,1);
-//         return `You have now checked out ${title} from the ${branch.name}`
-//       }
-//     }
-//   }else if (genre === "nonFiction") {
-//     for (i = 0; i <branch.shelves.nonFiction.length; i++) {
-//       if (branch.shelves.nonFiction[i].title === title) {
-//         branch.shelves.nonFiction.splice(i,1);
-//         return `You have now checked out ${title} from the ${branch.name}`
-//       }
-//     }
-//   }else {
-//     return `Sorry, there are currently no copies of ${title} available at the ${branch.name}`
-//   }
-// }
+function checkoutBook(branch, title, genre) {
+  if (genre === "fantasy") {
+    for (i = 0; i < branch.shelves.fantasy.length; i++) {
+      if (branch.shelves.fantasy[i].title === title) {
+        branch.shelves.fantasy.splice(i,1);
+        return `You have now checked out ${title} from the ${branch.name}`
+      }
+    }
+  }else if (genre === "fiction") {
+    for (i = 0; i < branch.shelves.fiction.length; i++) {
+      if (branch.shelves.fiction[i].title === title) {
+        branch.shelves.fiction.splice(i,1);
+        return `You have now checked out ${title} from the ${branch.name}`
+      }
+    }
+  }else if (genre === "nonFiction") {
+    for (i = 0; i <branch.shelves.nonFiction.length; i++) {
+      if (branch.shelves.nonFiction[i].title === title) {
+        branch.shelves.nonFiction.splice(i,1);
+        return `You have now checked out ${title} from the ${branch.name}`
+      }
+    }
+  }
+  return `Sorry, there are currently no copies of ${title} available at the ${branch.name}`
+}
+
 
 module.exports = {
   createLibrary,
   addBook,
-  //checkoutBook
+  checkoutBook
 };
